@@ -7,11 +7,11 @@ spring:
   main:
     allow-circular-references: true
   datasource:
-    druid:
-      driver-class-name: ${sky.datasource.driver-class-name}
-      url: jdbc:mysql://${sky.datasource.host}:${sky.datasource.port}/${sky.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
-      username: ${sky.datasource.username}
-      password: ${sky.datasource.password}
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://localhost:3306/sky_take_out?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root  # 你的 MySQL 用户名（常见 root/自定义账号）
+      password: q23874325p  # 你的 MySQL 密码（重点核对！）
+      driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
   #mapper配置文件
@@ -34,6 +34,6 @@ sky:
     # 设置jwt签名加密时使用的秘钥
     admin-secret-key: itcast
     # 设置jwt过期时间
-    admin-ttl: 7200000
+    admin-ttl: 864000000
     # 设置前端传递过来的令牌名称
     admin-token-name: token
